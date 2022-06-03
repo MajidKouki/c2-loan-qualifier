@@ -7,12 +7,15 @@ Example:
 """
 
 
+# Import modules for use in the program
 import sys
 import csv
 import fire
 import questionary
 from pathlib import Path
 
+
+# Import local modules for use in the program
 from qualifier.utils.fileio import load_csv
 
 from qualifier.utils.calculators import (
