@@ -109,15 +109,18 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
+    # Checks if the loan list is empty or not
     if bool(qualifying_loans) == False:
         sys.exit("There are no available loans.")
     else:
+        # Asks if the user wants to save the file or not
         if questionary.confirm("Do you want to save your loan information?").ask():
+            # User inputs path to save the file to
             csvpath = questionary.text("Enter a file path to save the sheet to: (ex. dir/filename.csv)").ask()
         else:
             sys.exit("Loan information will not be saved.")
 
-    # Input path to save including filename
+        # Saves information as a csv to the path chosen by the user above
         with open(csvpath, "w", newline="") as csvfile:
             csvwriter = csv.writer(csvfile, delimiter=",")
             csvwriter.writerows(qualifying_loans)
