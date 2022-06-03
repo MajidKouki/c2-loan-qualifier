@@ -1,0 +1,50 @@
+  828  pwd
+  829  git push
+  830  git pull
+  831  git config pull.rebase false
+  832  git pull
+  833  git status
+  834  git push
+  835  cd ..
+  836  ls c2-loan-qualifier
+  837  cd c2-loan-qualifier
+  838  ls
+  839  git status
+  840  git add License
+  841  git status
+  842  git add LICENSE
+  843  git status
+  844  git commit -m "Added LICENSE"
+  845  git status
+  846  git add data/ qualifier/ app.py
+  847  git status
+  848  git commit -m "Added project files and directories"
+  849  git status
+  850  git push
+  851  ls
+  852  python app.py
+  853  git status
+  854  git add app.py qualifier/utils/fileio.py
+  855  git commit -m "Updated to save results as a csv file"
+  856  git push
+  857  python app.py
+  858* /usr/local/bin/python3
+  859  python app.py
+  860  3
+  861  cd -
+  862  python app.py
+  863  cd ..
+  864  cd c2-loan-qualifier
+  865  python app.py
+  866  git status
+  867  git add app.py qualifier/utils/fileio.py
+  868  git commit -m "Updated functions to allow for user input regarding saving the data as a csv"
+  869  git push
+  870  git status
+  871  git add README.md
+  872  git commit -m "Updated README.md to include relevant project information"
+  873  git push
+  874  git status
+  875  git add app.py
+  876  git commit -m "Updated code comments"
+  877  git push
