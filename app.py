@@ -8,14 +8,12 @@ Example:
 
 
 import sys
+import csv
 import fire
 import questionary
 from pathlib import Path
 
-from qualifier.utils.fileio import (
-    load_csv, 
-    save_qualifying_loans
-)
+from qualifier.utils.fileio import load_csv
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -104,6 +102,25 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     print(f"Found {len(bank_data_filtered)} qualifying loans")
 
     return bank_data_filtered
+
+def save_qualifying_loans(qualifying_loans):
+    """Saves the qualifying loans to a CSV file.
+
+    Args:
+        qualifying_loans (list of lists): The qualifying bank loans.
+    """
+    if bool(qualifying_loans) == False:
+        sys.exit("There are no available loans.")
+    else:
+        if questionary.confirm("Do you want to save your loan information?").ask():
+            csvpath = questionary.text("Enter a file path to save the sheet to: (ex. dir/filename.csv)").ask()
+        else:
+            sys.exit("Loan information will not be saved.")
+
+    # Input path to save including filename
+        with open(csvpath, "w", newline="") as csvfile:
+            csvwriter = csv.writer(csvfile, delimiter=",")
+            csvwriter.writerows(qualifying_loans)
 
 
 def run():
