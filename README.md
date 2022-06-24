@@ -41,7 +41,7 @@ If there are available loans, the user will be asked if they want to save the da
 
 ## Contributors
 
-Brought to you by Majid Kouki
+Brought to you by Majid Kouki. You can reach me at [majidkpy@gmail.com](mailto:majidkpy@gmail.com).
 
 ---
 
